@@ -1,7 +1,7 @@
 package jm.task.core.jdbc.dao;
 
 import jm.task.core.jdbc.model.User;
-import jm.task.core.jdbc.util.Util;
+import jm.task.core.jdbc.util.UtilJDBC;
 
 import java.sql.Connection;
 import java.sql.ResultSet;
@@ -17,7 +17,7 @@ public class UserDaoJDBCImpl implements UserDao {
         Statement statement = null;
 
         try {
-            connection = Util.getMySQLConnection();
+            connection = UtilJDBC.getMySQLConnection();
             statement = connection.createStatement();
             statement.executeUpdate(sql);
         } catch (SQLException e) {
@@ -73,7 +73,7 @@ public class UserDaoJDBCImpl implements UserDao {
         ResultSet rs = null;
 
         try {
-            connection = Util.getMySQLConnection();
+            connection = UtilJDBC.getMySQLConnection();
             statement = connection.createStatement();
             rs = statement.executeQuery(sql);
 
