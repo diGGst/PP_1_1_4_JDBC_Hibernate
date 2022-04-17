@@ -37,7 +37,7 @@ public class UserDaoJDBCImpl implements UserDao {
     }
 
     public void createUsersTable() {
-        String sql = "CREATE TABLE IF NOT EXISTS `shema1`.`Users` " +
+        String sql = "CREATE TABLE IF NOT EXISTS `Users` " +
                 "(`ID` INT NOT NULL AUTO_INCREMENT," +
                 "`Name` VARCHAR(100) NULL," +
                 "`LastName` VARCHAR(100) NULL," +
@@ -48,25 +48,25 @@ public class UserDaoJDBCImpl implements UserDao {
     }
 
     public void dropUsersTable() {
-        String sql = "DROP TABLE IF EXISTS `shema1`.`Users`";
+        String sql = "DROP TABLE IF EXISTS `Users`";
 
         executeUpdate(sql);
     }
 
     public void saveUser(String name, String lastName, byte age) {
-        String sql = "INSERT INTO `shema1`.`Users` (`Name`, `LastName`, `Age`) VALUES ('" + name + "', '" + lastName + "', '" + age + "')";
+        String sql = "INSERT INTO `Users` (`Name`, `LastName`, `Age`) VALUES ('" + name + "', '" + lastName + "', '" + age + "')";
 
         executeUpdate(sql);
     }
 
     public void removeUserById(long id) {
-        String sql = "DELETE FROM `shema1`.`Users` WHERE `ID`=" + id;
+        String sql = "DELETE FROM `Users` WHERE `ID`=" + id;
 
         executeUpdate(sql);
     }
 
     public List<User> getAllUsers() {
-        String sql = "SELECT * FROM `shema1`.`Users`";
+        String sql = "SELECT * FROM `Users`";
         List<User> userList = new ArrayList<>();
         Connection connection = null;
         Statement statement = null;
@@ -103,7 +103,7 @@ public class UserDaoJDBCImpl implements UserDao {
     }
 
     public void cleanUsersTable() {
-        String sql = "DELETE FROM `shema1`.`Users`";
+        String sql = "DELETE FROM `Users`";
 
         executeUpdate(sql);
     }

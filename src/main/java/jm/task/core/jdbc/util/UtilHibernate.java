@@ -24,16 +24,16 @@ public class UtilHibernate {
                 Configuration configuration = new Configuration();
 
                 String hostName = "localhost";
-                String dbName = "";
+                String dbName = "shema1";
 
                 Properties settings = new Properties();
                 settings.put(Environment.DRIVER, "com.mysql.cj.jdbc.Driver");
-                settings.put(Environment.URL, "jdbc:mysql://" + hostName + ":3306/" + dbName);
+                settings.put(Environment.URL, "jdbc:mysql://" + hostName + ":3306/" + dbName + "?useSSL=false");
                 settings.put(Environment.USER, "root");
                 settings.put(Environment.PASS, "1q2w3e4r");
                 settings.put(Environment.DIALECT, "org.hibernate.dialect.MySQL8Dialect");
                 settings.put(Environment.SHOW_SQL, "true");
-                settings.put(Environment.HBM2DDL_AUTO, "create");
+//                settings.put(Environment.HBM2DDL_AUTO, "update");
 
                 configuration.setProperties(settings);
 

@@ -9,7 +9,7 @@ public class UtilJDBC {
     public static Connection getMySQLConnection() throws SQLException {
 
         String hostName = "localhost";
-        String dbName = "";
+        String dbName = "shema1";
         String userName = "root";
         String password = "1q2w3e4r";
 
